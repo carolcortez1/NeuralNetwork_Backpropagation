@@ -1,0 +1,37 @@
+-----------------| grad_x0 = grad_s00 * w0_00 + grad_s10 * w0_10
+-----------------| grad_x1 = grad_s01 * w0_01 + grad_s11 * w0_11
+
+-----------------| grad_w0_00 = grad_s00 * x0
+-----------------| grad_w0_01 = grad_s01 * x1
+-----------------| grad_w0_10 = grad_s10 * x0
+-----------------| grad_w0_11 = grad_s11 * x1    
+
+
+s00 = x0 * w0_00 | grad_s00 = grad_s02
+s01 = x1 * w0_01 | grad_s01 = grad_s02
+s10 = x0 * w0_10 | grad_s10 = grad_s12
+s11 = x1 * w0_11 | grad_s11 = grad_s12
+
+s02 = s00 + s01  | grad_s02 = grad_v0
+-----------------| grad b0_0 = grad_v0
+s12 = s10 + s11  | grad_s12 = grad_v1
+-----------------| grad b0_1 = grad_v1
+
+v0 = s01 + b0_0  | grad_v0 = grad_y0 * y0 * (1 - y0)
+v1 = s12 + bo_1  | grad_v1 = grad_y1 * y1 * (1 - y1)
+
+y0 = sigmoid(v0) | grad_y1 = grad_s20 * w1_0
+-----------------| grad_w1_0 = grad_s20 * y1
+y1 = sigmoid(v1) | grad_y1 = grad_s21 * w1_1
+-----------------| grad_w1_1 = grad_s21 * y1
+
+s20 = w1_0 * y0  | grad_s20 = grad_s22
+s21 = w1_1 * y1  | grad_s21 = grad_s22
+
+s22 = s20 * s21  | grad_s22 = grad_v2
+-----------------| grad_b1_0 = grad_v2
+
+v2 = s22 + b1_0  | grad_v2 = grad_y2 * y2 * (1 - y2)
+y2 = sigmoid(v2) | grad_y2 = grad_e
+e = y2 - d       | grad_e = grad_L * e
+L = 1/2 * e^2    | grad_L = 1/2
