@@ -20,6 +20,9 @@ env/
 # BMad outputs
 _bmad-output/
 
+# Planos de trabalho dos experimentos (não fazem parte da entrega)
+plano.md
+
 # OS
 .DS_Store
 Thumbs.db
