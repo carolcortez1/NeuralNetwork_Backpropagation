@@ -17,8 +17,14 @@ env/
 # Jupyter
 .ipynb_checkpoints/
 
-# BMad outputs
+# BMad / agente (tooling local, não faz parte da entrega)
+_bmad/
 _bmad-output/
+.devin/
+AGENTS.md
+
+# Editor
+.vscode/
 
 # Planos de trabalho dos experimentos (não fazem parte da entrega)
 plano.md
