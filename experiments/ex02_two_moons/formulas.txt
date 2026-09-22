@@ -1,0 +1,50 @@
+Two Moons — [2 -> 4 -> 1], oculta tanh, saida sigmoide
+Convenção: w0_ji liga a entrada i ao neuronio oculto j (no codigo: w0[j, i], mesmo estilo do exemplo4.py); w1_j liga o neuronio oculto j a saida.
+Copie o padrao para j = 2 e j = 3 (identico, trocando o indice).
+
+-----------------| grad_x0 = grad_s00 * w0_00 + grad_s10 * w0_10 + grad_s20 * w0_20 + grad_s30 * w0_30
+-----------------| grad_x1 = grad_s01 * w0_01 + grad_s11 * w0_11 + grad_s21 * w0_21 + grad_s31 * w0_31
+
+-----------------| grad_w0_00 = grad_s00 * x0
+-----------------| grad_w0_01 = grad_s01 * x1
+-----------------| grad_w0_10 = grad_s10 * x0
+-----------------| grad_w0_11 = grad_s11 * x1
+(neuronios 2 e 3: mesmo padrao — grad_w0_20 = grad_s20 * x0, etc.)
+
+s00 = x0 * w0_00 | grad_s00 = grad_s02
+s01 = x1 * w0_01 | grad_s01 = grad_s02
+s10 = x0 * w0_10 | grad_s10 = grad_s12
+s11 = x1 * w0_11 | grad_s11 = grad_s12
+(neuronios 2 e 3: s20, s21 -> s22; s30, s31 -> s32)
+
+s02 = s00 + s01  | grad_s02 = grad_v0
+-----------------| grad_b0_0 = grad_v0
+s12 = s10 + s11  | grad_s12 = grad_v1
+-----------------| grad_b0_1 = grad_v1
+(neuronios 2 e 3: s22 -> v2, b0_2; s32 -> v3, b0_3)
+
+v0 = s02 + b0_0  | grad_v0 = grad_y0 * (1 - y0^2)     <- derivada da tanh
+v1 = s12 + b0_1  | grad_v1 = grad_y1 * (1 - y1^2)
+(neuronios 2 e 3: mesmo padrao)
+
+y0 = tanh(v0)    | grad_y0 = grad_s40 * w1_0
+-----------------| grad_w1_0 = grad_s40 * y0
+y1 = tanh(v1)    | grad_y1 = grad_s41 * w1_1
+-----------------| grad_w1_1 = grad_s41 * y1
+y2 = tanh(v2)    | grad_y2 = grad_s42 * w1_2
+-----------------| grad_w1_2 = grad_s42 * y2
+y3 = tanh(v3)    | grad_y3 = grad_s43 * w1_3
+-----------------| grad_w1_3 = grad_s43 * y3
+
+s40 = w1_0 * y0  | grad_s40 = grad_s44
+s41 = w1_1 * y1  | grad_s41 = grad_s44
+s42 = w1_2 * y2  | grad_s42 = grad_s44
+s43 = w1_3 * y3  | grad_s43 = grad_s44
+
+s44 = s40 + s41 + s42 + s43 | grad_s44 = grad_v4
+----------------------------| grad_b1_0 = grad_v4
+
+v4 = s44 + b1_0  | grad_v4 = grad_y4 * y4 * (1 - y4)   <- derivada da sigmoide
+y4 = sigmoid(v4) | grad_y4 = grad_e
+e = y4 - d       | grad_e = grad_L * e
+L = 1/2 * e^2    | grad_L = 1
