@@ -11,7 +11,7 @@ Implementei uma rede neural — forward e backpropagation escritos de forma esca
 | Experimento | Dataset | Arquitetura | Ativações | Acurácia |
 |---|---|---|---|---|
 | [01 — XOR](experiments/ex01_xor/experimento_01.ipynb) | XOR (4 amostras) | `[2 → 2 → 1]` | sigmoide nas duas camadas | 100% |
-| [02 — Two Moons](experiments/ex02_two_moons/experimento_02.ipynb) | `make_moons` (100 amostras) | `[2 → 4 → 1]` | tanh na oculta, sigmoide na saída | 100% |
+| [02 — Two Moons](experiments/ex02_two_moons/experimento_02.ipynb) | `make_moons` (100 amostras) | `[2 → 4 → 1]` | tanh na primeira camada, sigmoide na segunda camada | 100% |
 
 ## Modificações em relação ao `exemplo4.py`
 
