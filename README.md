@@ -1,4 +1,4 @@
-# Rede Neural com Backpropagation — Projeto 1
+# Rede Neural com Backpropagation — Projeto 
 
 Projeto individual da disciplina de Matemática/Computação. A especificação pedia projetar e implementar uma rede neural a partir do `exemplo4.py` (aula de 21/08/2026), com liberdade para alterar neurônios, camadas, função de ativação e base de dados.
 
@@ -6,7 +6,7 @@ Projeto individual da disciplina de Matemática/Computação. A especificação 
 
 ## O que foi feito
 
-Implementei uma rede neural *na mão* — forward e backpropagation escritos de forma escalar, uma operação por linha, seguindo a estrutura do `exemplo4.py` — e validei o resultado contra uma baseline equivalente em Keras. Foram dois experimentos, cada um em um notebook em formato de relatório (com diagrama da rede, dataset, fórmulas, curvas de loss e fronteira de decisão):
+Implementei uma rede neural — forward e backpropagation escritos de forma escalar, uma operação por linha, seguindo a estrutura do `exemplo4.py` — e validei o resultado contra uma baseline equivalente em Keras. Foram dois experimentos, cada um em um notebook em formato de relatório (com diagrama da rede, dataset, fórmulas, curvas de loss e fronteira de decisão):
 
 | Experimento | Dataset | Arquitetura | Ativações | Acurácia |
 |---|---|---|---|---|
