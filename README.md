@@ -2,7 +2,7 @@
 
 Projeto individual da disciplina de Matemática/Computação. A especificação pedia projetar e implementar uma rede neural a partir do exemplo de classe (`exemplo4.py` - aula de 21/08/2026), com liberdade para alterar neurônios, camadas, função de ativação e base de dados.
 
-**Autora:** Carol Cortez · **Entrega:** 26/09/2026
+**Autora:** Carolina Cortez · cc2@cin.ufpe.br · **Entrega:** 26/09/2026
 
 ## O que foi feito
 
