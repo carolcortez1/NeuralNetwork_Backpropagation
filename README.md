@@ -29,7 +29,8 @@ As anotações completas (convergência, inicialização, soma vs. média dos gr
 ## Estrutura do repositório
 
 ```
-docs/input/                  especificação do projeto e exemplo4.py de referência
+especificacao_projeto.txt    especificação do projeto
+exemplo4.py                  exemplo de referência (aula de 21/08/2026)
 experiments/ex01_xor/        notebook + fórmulas + figuras do experimento XOR
 experiments/ex02_two_moons/  notebook + fórmulas + figuras do experimento Two Moons
 ```
